@@ -1,0 +1,13 @@
+<h2>Order Detail</h2>
+<div *ngIf="order">
+  <h3>Order #{{ order.id }}</h3>
+  <p>Date: {{ order.orderDate | date }}</p>
+  <p>Status: {{ order.status }}</p>
+  <p>Total: {{ order.total | currency }}</p>
+  <h4>Products:</h4>
+  <ul>
+    <li *ngFor="let item of order.orderDetails">
+      {{ item.product.name }} - Quantity: {{ item.quantity }} - Price: {{ item.unitPrice | currency }}
+    </li>
+  </ul>
+</div>

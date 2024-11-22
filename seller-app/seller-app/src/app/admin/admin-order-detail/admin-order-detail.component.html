@@ -1,0 +1,26 @@
+<!-- order-detail.component.html -->
+<mat-card *ngIf="orderDetail">
+    <mat-card-header>
+      <mat-card-title>Order Detail #{{ orderDetail.orderDetailID }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="order-info">
+        <div>
+          <strong>Order ID:</strong> {{ orderDetail.orderID }}
+        </div>
+        <div>
+          <strong>Product:</strong> {{ orderDetail.product.name }}
+        </div>
+        <div>
+          <strong>Quantity:</strong> {{ orderDetail.quantity }}
+        </div>
+        <div>
+          <strong>Unit Price:</strong> {{ orderDetail.unitPrice | currency }}
+        </div>
+        <div>
+          <strong>Total Price:</strong> {{ orderDetail.quantity * orderDetail.unitPrice | currency }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

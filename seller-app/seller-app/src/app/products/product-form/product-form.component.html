@@ -1,0 +1,21 @@
+<h2 *ngIf="isEditMode">Edit Product</h2>
+<h2 *ngIf="!isEditMode">Add New Product</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input formControlName="name">
+  </label>
+  <label>
+    Description:
+    <input formControlName="description">
+  </label>
+  <label>
+    Price:
+    <input formControlName="price" type="number">
+  </label>
+  <label>
+    Stock:
+    <input formControlName="stock" type="number">
+  </label>
+  <button type="submit">Save</button>
+</form>

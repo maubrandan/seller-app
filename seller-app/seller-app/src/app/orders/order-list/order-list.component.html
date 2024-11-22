@@ -1,0 +1,6 @@
+<h2>Order List</h2>
+<ul>
+  <li *ngFor="let order of orders">
+    <a [routerLink]="['/orders', order.id]">Order #{{ order.id }} - Total: {{ order.total | currency }}</a>
+  </li>
+</ul>

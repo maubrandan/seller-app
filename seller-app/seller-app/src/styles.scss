@@ -1,0 +1,174 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+
+// Variables
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$font-family: 'Roboto', sans-serif;
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease-in-out;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global Styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: $light-color;
+  color: $dark-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $dark-color;
+  }
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Flexbox Utility Classes
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Grid Utility Classes
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-gap {
+  gap: 20px;
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  @include transition(background-color, 0.3s);
+
+  &-primary {
+    background-color: $primary-color;
+    color: $light-color;
+
+    &:hover {
+      background-color: $dark-color;
+    }
+  }
+
+  &-secondary {
+    background-color: $secondary-color;
+    color: $light-color;
+
+    &:hover {
+      background-color: $dark-color;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+// Navbar Styles
+.navbar {
+  background-color: $primary-color;
+  padding: 10px 20px;
+
+  a {
+    color: $light-color;
+    margin-right: 20px;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+// Footer Styles
+.footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .navbar a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
